@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "action": { "type": "string", "enum": ["move", "quarantine", "leave"] },
+          "dest": { "type": "string" },
+          "confidence": { "type": "number" },
+          "reason": { "type": "string" }
+        },
+        "required": ["path", "action", "dest", "confidence", "reason"]
+      }
+    }
+  },
+  "required": ["plan"]
+}
